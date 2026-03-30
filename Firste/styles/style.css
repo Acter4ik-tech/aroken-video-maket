@@ -1,0 +1,147 @@
+html, body {
+  font-family: Lato, sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+:root {
+  --bg-button-liner: linear-gradient(45deg, #ff3f3a 0%, #f75e05 100%);
+}
+
+.button {
+  display: inline-block;
+  font-size: 16px;
+  padding: 0px 40px;
+  background: var(--bg-button-liner);
+  line-height: 52px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.button--empty {
+  background-image: none;
+  border-left: 2px solid #ff3f3a;
+  border-right: 2px solid #f75e05;
+  background-image: -webkit-linear-gradient(left, #ff3f3a, #f75e05), -webkit-linear-gradient(left, #ff3f3a, #f75e05);
+  background-image: linear-gradient(left, #ff3f3a, #f75e05), linear-gradient(left, #ff3f3a, #f75e05);
+  background-size: 100% 2px;
+  background-position: 0 100%, 0 0;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+}
+
+.button--empty span {
+  background: var(--bg-button-liner);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.logo {
+  cursor: pointer;
+}
+
+/* ----------------------- */
+
+.header {
+  
+}
+.header__top {
+  padding: 20px 0 0 0;
+}
+.header__body {
+}
+.container {
+  max-width: 1260px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.header__top-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: #424551;
+  font-size: 16px;
+}
+
+
+.header__logo {
+  margin-right: 60px;
+}
+
+.header__logo.logo {
+}
+.header__nav {
+  margin-right: auto;
+}
+.header__btn-box {
+  display: flex;
+  align-items: center;
+}
+.header__nav-list {
+  display: flex;
+}
+
+.header__nav-list li {
+  margin-right: 40px;
+}
+
+.header__nav-list li:last-child {
+  margin-right: 0;
+}
+
+
+.header__user {
+  /* letter-spacing: 0.07em; */
+  white-space: nowrap;
+  position: relative;
+  padding: 0 0 0 28px;
+  margin-left: 36px;
+  line-height: 1.6;
+
+}
+
+.header__user::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  background: url(../images/Elements/Profile.svg);
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+
+}
+
+
+.header__nav-item {
+}
+
+:is(.header__user-btn, .header__nav-link) {
+  transition: color 0.3s ease;
+}
+
+:is(.header__user-btn, .header__nav-link):hover {
+  color: #ff3f3a;
+}
+
+.header__user-btn:hover {
+}
+.header__nav-link:hover {
+  
+}
+
