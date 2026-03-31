@@ -2,15 +2,28 @@ html, body {
   font-family: Lato, sans-serif;
 }
 
+:root {
+  --bg-button-liner: linear-gradient(45deg, #ff3f3a 0%, #f75e05 100%);
+}
+
+body {
+  height: 100vh;
+}
+
 .wrapper {
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
 }
 
-:root {
-  --bg-button-liner: linear-gradient(45deg, #ff3f3a 0%, #f75e05 100%);
+.container {
+  max-width: 1260px;
+  padding: 0 15px;
+  margin: 0 auto;
+  height: 100%;
 }
+
+
 
 .button {
   display: inline-block;
@@ -24,6 +37,8 @@ html, body {
   border-radius: 4px;
   white-space: nowrap;
   transition: transform 0.3s ease;
+
+  cursor: pointer;
 }
 
 .button:hover {
@@ -34,12 +49,16 @@ html, body {
   background-image: none;
   border-left: 2px solid #ff3f3a;
   border-right: 2px solid #f75e05;
-  background-image: -webkit-linear-gradient(left, #ff3f3a, #f75e05), -webkit-linear-gradient(left, #ff3f3a, #f75e05);
-  background-image: linear-gradient(left, #ff3f3a, #f75e05), linear-gradient(left, #ff3f3a, #f75e05);
+  /* background-image: -webkit-linear-gradient(left, #ff3f3a, #f75e05), -webkit-linear-gradient(left, #ff3f3a, #f75e05);
+  background-image: linear-gradient(left, #ff3f3a, #f75e05), linear-gradient(left, #ff3f3a, #f75e05); */
+  background-image: linear-gradient(to right, #ff3f3a, #f75e05), 
+                    linear-gradient(to right, #ff3f3a, #f75e05);
   background-size: 100% 2px;
   background-position: 0 100%, 0 0;
   background-repeat: no-repeat;
   background-clip: border-box;
+
+  cursor:pointer;
 }
 
 .button--empty span {
@@ -57,18 +76,16 @@ html, body {
 /* ----------------------- */
 
 .header {
-  
+  background-color: #feddd0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .header__top {
   padding: 20px 0 0 0;
 }
-.header__body {
-}
-.container {
-  max-width: 1260px;
-  padding: 0 15px;
-  margin: 0 auto;
-}
+
+
 .header__top-inner {
   display: flex;
   justify-content: space-between;
@@ -78,13 +95,10 @@ html, body {
   font-size: 16px;
 }
 
-
 .header__logo {
   margin-right: 60px;
 }
 
-.header__logo.logo {
-}
 .header__nav {
   margin-right: auto;
 }
@@ -106,7 +120,6 @@ html, body {
 
 
 .header__user {
-  /* letter-spacing: 0.07em; */
   white-space: nowrap;
   position: relative;
   padding: 0 0 0 28px;
@@ -128,9 +141,6 @@ html, body {
 }
 
 
-.header__nav-item {
-}
-
 :is(.header__user-btn, .header__nav-link) {
   transition: color 0.3s ease;
 }
@@ -139,9 +149,98 @@ html, body {
   color: #ff3f3a;
 }
 
-.header__user-btn:hover {
+.header__body {
+  flex-grow: 1;
 }
-.header__nav-link:hover {
+
+.header__body-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+.header__main {
+  display: flex;
+  justify-content: start;
+  margin: auto 0;
+}
+
+.header__content {
+  margin-right: 180px;
+}
+
+.header__play {
+  display: inline-flex;
+  align-items: center;
+  height: 84px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1E212C;
+  line-height: 1.5;
+}
+
+.header__play svg {
+  margin-right: 16px;
+  border-radius: 50%;
+  transition: box-shadow 0.3s ease;
+}
+
+.header__play:hover svg {
+  box-shadow: 0 0 0px 16px rgba(255, 63, 58, 0.12);
+}
+
+
+.header__title {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  min-width: 14ch;
+  margin-bottom: 60px;
+  color: #1E212C;
+}
+
+.header__content-buttons {
+  display: flex;
+}
+
+.header__content-btn:first-child {
+  margin-right: 24px;
+}
+
+
+
+.header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #1E212C;
+  margin-bottom: 80px;
   
 }
+
+.header__row > span {
+  background-color: #ff3f3a;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.header__row-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.header__row span {
+  font-size: 46px;
+  font-weight: 900;
+  list-style: 1.3;
+}
+
 
