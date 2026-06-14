@@ -109,6 +109,7 @@ body {
 
 
 /* ---------------------------------------HEADER TOP ------------------------------------- */
+/* --------------------------------------------------------------------------------------- */
 
 .header__top-inner {
     display: flex;
@@ -174,6 +175,7 @@ body {
 
 
 /* -------------------------------------HEADER BODY-------------------------- */
+/* -------------------------------------------------------------------------- */
 
 .header__body {
     flex-grow: 1;
@@ -266,6 +268,7 @@ body {
 }
 
 /* -------------------------------------------MAIN ABOUT US -------------------------- */
+/* ----------------------------------------------------------------------------------- */
 
 .main__about {
     margin-top: 179px;
@@ -275,6 +278,19 @@ body {
 .about-inner {
     display: flex;
     justify-content: space-between;
+    position: relative;
+}
+
+.about-inner::after {
+    position: absolute;
+    content: "";
+    top: -82px;
+    right: -237px;
+    display: block;
+    background: url("../images/Elements/semicircles-gold.svg");
+    width: 100px;
+    height: 85px;
+    opacity: 0.3;
 }
 
 .about-info {
@@ -360,10 +376,39 @@ body {
 }
 
 /* ---------------------------------------------MAIN DIRECTIONS---------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
 
 .main__directions{
     padding-bottom: 178px;
 }
+
+.directions-inner {
+    position: relative;
+}
+
+.directions-inner::before {
+    position: absolute;
+    content: "";
+    top: 27px;
+    left: -177px;
+    display: block;
+    background: url("../images/Elements/Group-of-point-gold.svg");
+    width: 136px;
+    height: 115px;
+}
+
+.directions-inner::after {
+    position: absolute;
+    content: "";
+    top: 416px;
+    right: -475px;
+    display: block;
+    background: url("../images/Elements/cirles-gold.svg");
+    width: 243px;
+    height: 243px;
+    opacity: 0.3;
+}
+
 
 .directions__filter-box {
     display: flex;
@@ -502,6 +547,55 @@ body {
     height: 24px;
     transform: translateY(-37%);
 }
+
+
+/* ---------------------------------------------Certificate/Award---------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------ */
+
+.main__award {
+    margin-bottom: -44px;
+}
+
+.award__inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.award__inner::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 20px;
+    left: -214px;
+    background: url("../images/Elements/rectangular-arrow-gold.svg") no-repeat;
+    width: 60px;
+    height: 60px;
+}
+
+.award__content {
+    max-width: 392px;
+}
+
+.award__content-desc {
+    padding: 48px 0 32px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--gray800);
+}
+
+.award__logos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.award__image-box > img {
+    box-shadow: 0 4px 4px -4px rgba(30, 33, 44, 0.05), 
+                0 12px 10px -6px rgba(154, 156, 165, 0.08), 
+                0 30px 24px -10px rgba(154, 156, 165, 0.1), 
+                0 80px 80px -20px rgba(154, 156, 165, 0.16);
+}
+
 
 
 
