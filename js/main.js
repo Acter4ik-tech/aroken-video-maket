@@ -16,6 +16,8 @@ $(function () {
     $(this).addClass('directions__filter-btn--active')
   });
 
+  // --------------------TEAM SLIDER---------------
+
   $('.team__slider').slick({
     arrows:false,
     slidesToShow: 4,
@@ -31,6 +33,9 @@ $(function () {
     e.preventDefault()
     $('.team__slider').slick('slickNext')
   })
+
+  // --------------------TESTIMONIALS SLIDER---------------
+
 
   $('.testimonials__slider').slick({
     arrows:false,
@@ -50,18 +55,21 @@ $(function () {
     $('.testimonials__slider').slick('slickNext')
   })
 
+  // --------------------COURSE CLICK FOR LINK---------------
+
 
   $('.cousre__lesson-link').on('click', function (e) {
     e.preventDefault()
-    if($('.cousre__lesson-link').hasClass('cousre__lesson-link--active')) {
-      $('.cousre__lesson-link').removeClass('cousre__lesson-link--active')
+    if($(this).hasClass('cousre__lesson-link--active')) {
       $(this).children('.cousre__lesson-desc').slideUp()
+      $('.cousre__lesson-link').removeClass('cousre__lesson-link--active')
     }
     else {
+      $('.cousre__lesson-link').removeClass('cousre__lesson-link--active')
+      $('.cousre__lesson-desc').slideUp()
+      $(this).children('.cousre__lesson-desc').slideDown()
       $(this).addClass('cousre__lesson-link--active')
-      $(this).children('.cousre__lesson-desc').slideUp()
     }
-    // $(this).removeClass('cousre__lesson-link--active')
   })
 
 
