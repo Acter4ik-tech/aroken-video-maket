@@ -935,8 +935,117 @@ body {
     transition: all .3s ease;
 }
 
+/* ---------------------------------------------COMPANIES---------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------- */
 
 
+.main__companies {
+    padding: 180px 0 177px 0;
+    background: var(--gray200);
+}
+
+.companies__heading {
+    padding-bottom: 60px;
+}
+
+.companies__grid {
+    display: grid;
+    grid-template: repeat(2, auto) / repeat(6, 1fr);
+    gap: 40px 100px
+}
+
+.companies__grid-link {
+    display: block;
+}
+
+.companies__grid-link img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1);
+    opacity: 0.6;
+    transition: all 1.3s ease;
+}
+
+.companies__grid-link:hover img {
+    filter: grayscale(0);
+    opacity: 1;
+    transition: all .3s ease;
+}
+
+
+/* ---------------------------------------------COURSE------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------- */
+
+.cousre__heading {
+    padding: 116px 0 60px 0;
+}
+
+.course__content {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.cousre__lesson-list {
+    font-weight: 400;
+    max-width: 600px;
+}
+
+.cousre__lesson-link {
+    display: block;
+    font-weight: 700;
+    color: var(--gray900);
+    padding-left: 40px;
+}
+
+.cousre__lesson-link span {
+    color: var(--main-red);
+    padding-right: 8px;
+}
+
+.cousre__lesson-head {
+    position: relative;
+}
+
+.cousre__lesson-head::before,
+.cousre__lesson-head::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    width: 18px;
+    height: 2px;
+    background-color: var(--main-red);
+    display: block;
+    border-radius: 2px;
+}
+
+.cousre__lesson-head::after {
+    transform: rotate(90deg);
+    transition: all .3s;
+}
+
+.cousre__lesson-link--active .cousre__lesson-head::after {
+    transform: rotate(0deg);
+}
+
+.cousre__lesson-link--active .cousre__lesson-desc {
+    display: block;
+}
+
+.cousre__lesson-desc {
+    display: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--gray800);
+    padding: 16px 0 24px 0;
+}
+
+.cousre__img-box {
+    align-self: center;
+}
 
 
 
