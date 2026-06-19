@@ -1,5 +1,6 @@
 $(function () {
-  // --------------FancyBox--------------
+  // ================================= FANCYBOX =================================
+  // ================================= FANCYBOX =================================
   Fancybox.bind("[data-fancybox]", {
     // width: "90%", 
     // maxWidth: 900,
@@ -7,16 +8,21 @@ $(function () {
     // maxHeight: 600
   });
 
-  // -----------------MixItUp---------------
+  // ================================= MixItUp =================================
+  // ================================= MixItUp =================================
+
   var mixer = mixitup('.directions__list');
 
-  // --------------------AddPrefixForDirectionsButtons---------------
+  // ================================= AddPrefixForDirectionsButtons =================================
+  // ================================= AddPrefixForDirectionsButtons =================================
+
   $('.directions__filter-btn').on('click', function () {
     $('.directions__filter-btn').removeClass('directions__filter-btn--active')
     $(this).addClass('directions__filter-btn--active')
   });
 
-  // --------------------TEAM SLIDER---------------
+  // ================================= TEAM SLIDER =================================
+  // ================================= TEAM SLIDER =================================
 
   $('.team__slider').slick({
     arrows:false,
@@ -34,7 +40,9 @@ $(function () {
     $('.team__slider').slick('slickNext')
   })
 
-  // --------------------TESTIMONIALS SLIDER---------------
+  // ================================= TESTIMONIALS SLIDER =================================
+  // ================================= TESTIMONIALS SLIDER =================================
+
 
 
   $('.testimonials__slider').slick({
@@ -55,7 +63,9 @@ $(function () {
     $('.testimonials__slider').slick('slickNext')
   })
 
-  // --------------------COURSE CLICK FOR LINK---------------
+  // ================================= COURSE CLICK FOR LINK =================================
+  // ================================= COURSE CLICK FOR LINK =================================
+
 
 
   $('.cousre__lesson-link').on('click', function (e) {

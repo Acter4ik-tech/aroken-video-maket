@@ -1069,6 +1069,11 @@ body {
     gap: 20px;
 }
 
+/* .blog__post-item {
+    display: block;
+} */
+
+
 .blog__post-link {
     display: block;
 }
@@ -1077,18 +1082,39 @@ body {
     position: relative;
     border-radius: 4px;
     overflow: hidden;
+}
 
+.blog__img-categoty {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 4px;
+    padding: 1px 8px;
+    margin: 12px 12px 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--gray-800);
+}
+
+.blog__img-categoty::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    display: block;
+    margin-right: 4px;
+}
+
+.blog__post--podcast .blog__img-categoty::before {
+    background: url('../images/Elements/mic.svg');
 }
 
 .blog__img-main {
     width: 100%;
     height: 100%;
-}
-
-.blog__img-box span {
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 .blog__link-content {
@@ -1097,7 +1123,7 @@ body {
 
 .blog__content-info {
     display: flex;
-    gap: 48px;
+    margin-bottom: 8px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.5;
@@ -1110,13 +1136,22 @@ body {
 
 .blog__info-element {
     position: relative;
+    padding: 0 12px;
 }
 
-.blog__info-element::before {
+.blog__info-element:first-child {
+    padding-left: 0;
+}
+
+.blog__info-element:last-child::after {
+    content: none;
+}
+
+.blog__info-element::after {
     position: absolute;
     content: "";
     top: 50%;
-    left: -24px;
+    right: 0;
     display: block;
     width: 1px;
     height: 12px;
@@ -1125,6 +1160,54 @@ body {
     transform: translateY(-50%);
 }
 
+.blog__info-date {
+    display: flex;
+    align-items: center;
+}
+
+.blog__info-date::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: url('../images/Elements/Calendar.svg');
+    margin-right: 12px;
+}
+
+.blog__info-time {
+    display: flex;
+    align-items: center;
+}
+
+.blog__info-time::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: url('../images/Elements/Clock.svg');
+    margin-right: 12px;
+}
+
+.blog__content-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--gray900);
+    margin-bottom: 8px;
+}
+
+.blog__content-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--gray800);
+    margin-bottom: 16px;
+}
+
+.blog__content-btn {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--gray900);
+}
 
 
 
