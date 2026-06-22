@@ -1443,6 +1443,46 @@ body {
 
 .questions__checkbox-label {
     margin-right: 50px;
+    display: flex;
+    font-weight: 400;
+    font-size: 16;
+    line-height: 1.6;
+    color: var(--gray800);
+    width: 100%;
+}
+
+.questions__form-checkbox {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+    margin-top: 5px;
+    margin-right: 12px;
+}
+
+.questions__checkbox-default {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.questions__checkbox-default:checked + .questions__checkbox-custom {
+    background: url('../images/Elements/check.svg') 50% 50% no-repeat, var(--main-red);
+    border: var(--main-red);
+}
+
+.questions__checkbox-custom {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid var(--gray800);
+    border-radius: 3px;
+    cursor: pointer;
+
 }
 
 .questions__form-btn {
@@ -1450,3 +1490,4 @@ body {
     align-self: center;
     text-align: center;
 }
+
