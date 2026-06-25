@@ -21,11 +21,6 @@ html, body {
     --gray1000: #292c37;
     --footer-title: #fff;
     --footer-link: #fff;
-    
-}
-
-body {
-    height: 100vh;
 }
 
 .wrapper {
@@ -1647,4 +1642,35 @@ body {
 
 .footer__bottom {
     background-color: var(--gray1000);
+}
+
+.footer__bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--footer-link);
+    line-height: 1.5;
+    opacity: 0.6;
+}
+
+.footer__bottom-reserved {
+    font-weight: 400;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer__bottom-reserved span::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    background: url('../images/Elements/Heart.svg');
+    margin: 0px 4px;
+}
+
+.footer__go-top {
+    font-weight: 700;
+    font-size: 14px;
 }
