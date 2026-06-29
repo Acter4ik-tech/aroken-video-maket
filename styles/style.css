@@ -24,7 +24,6 @@ html, body {
 }
 
 .wrapper {
-    height: 100vh;
     width: 100%;
     overflow-x: hidden;
 }
@@ -270,8 +269,11 @@ html, body {
 /* =============================================  ABOUT US  ============================================= */
 
 .main__about {
-    margin-top: 179px;
-    margin-bottom: 161px;
+    /* margin-top: 179px;
+    margin-bottom: 161px; */
+    margin-top: 100px;
+    margin-bottom: 81px;
+    padding-top: 80px;
 }
 
 .about-inner {
@@ -377,7 +379,9 @@ html, body {
 /* =============================================  DIRECTIONS  ============================================= */
 
 .main__directions{
-    padding-bottom: 178px;
+    padding-top: 80px;
+    /* padding-bottom: 178px; */
+    padding-bottom: 100px;
 }
 
 .directions-inner {
@@ -553,6 +557,7 @@ html, body {
 /* =============================================  AWARD  ============================================= */
 
 .main__award {
+    padding-top: 80px;
     margin-bottom: -44px;
 }
 
@@ -974,7 +979,8 @@ html, body {
 
 .main__course {
     margin-top: 116px;
-    margin-bottom: 186px;
+    /* margin-bottom: 186px; */
+    margin-bottom: 106px;
 }
 
 .cousre__inner {
@@ -1057,7 +1063,9 @@ html, body {
 /* =============================================  BLOG  ============================================= */
 
 .main__blog {
-    padding-bottom: 213px;
+    padding-top: 80px;
+    /* padding-bottom: 213px; */
+    padding-bottom: 133px;
 }
 
 .blog__top {
@@ -1262,7 +1270,9 @@ html, body {
 /* =============================================  CONTACT INFO  ============================================= */
 
 .main__contact {
-    padding-bottom: 180px;
+    padding-top: 80px;
+    /* padding-bottom: 180px; */
+    padding-bottom: 100px;
 }
 
 .contact__inner {
@@ -1373,6 +1383,7 @@ html, body {
 /* =============================================  CONTACT INFO  ============================================= */
 
 .main__questions {
+    padding-top: 80px;
     padding-bottom: 180px;
 }
 

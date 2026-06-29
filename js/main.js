@@ -83,6 +83,24 @@ $(function () {
   })
 
 
+  $(".header__nav-list a, .header__top-btn, .header__content-btn, .header__content-btn").on('click', function (e) {
+    e.preventDefault() // отменяем стандартное действие перехода по ссылке
+      
+    var elementClick = $(this).attr("href") // получаем значение атрибута href
+    var top = $(elementClick).offset().top // определяем координаты элемента
+    
+    $('body,html').animate({ scrollTop: top }, 800) // 800 — время прокрутки в мс
+  });
+
+  $(".footer__column-list a").on('click', function (e) {
+    e.preventDefault() // отменяем стандартное действие перехода по ссылке
+      
+    var elementClick = $(this).attr("href") // получаем значение атрибута href
+    var top = $(elementClick).offset().top // определяем координаты элемента
+    
+    $('body,html').animate({ scrollTop: top }, 800) // 800 — время прокрутки в мс
+  });
+
   
 
 
