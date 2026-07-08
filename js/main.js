@@ -2,16 +2,31 @@ $(function () {
   // ================================= FANCYBOX =================================
   // ================================= FANCYBOX =================================
   Fancybox.bind("[data-fancybox]", {
-    // width: "90%", 
-    // maxWidth: 900,
-    // height: "70%", 
-    // maxHeight: 600
+    
   });
 
   // ================================= MixItUp =================================
   // ================================= MixItUp =================================
 
-  var mixer = mixitup('.directions__list');
+  var mixer = mixitup('.directions__list', {
+    callbacks: {
+        onMixStart: function() {
+            // Отключаем переходы на время анимации
+            document.querySelectorAll('.directions__list-item').forEach(el => {
+                el.classList.remove('directions__list-item--animation')
+                el.style.pointerEvents = 'none'
+            });
+        },
+        onMixEnd: function() {
+            setTimeout(() => {
+              document.querySelectorAll('.directions__list-item').forEach(el => {
+                  el.classList.add('directions__list-item--animation')
+                  el.style.pointerEvents = 'auto';
+              });
+            }, 50); // 50ms задержки
+        }
+    }
+  });
 
   // ================================= AddPrefixForDirectionsButtons =================================
   // ================================= AddPrefixForDirectionsButtons =================================
@@ -82,6 +97,8 @@ $(function () {
     }
   })
 
+  // ================================= SCROLE ANIMATIOM FOR LINK =================================
+  // ================================= SCROLE ANIMATIOM FOR LINK =================================
 
   $(".header__nav-list a, .header__top-btn, .header__content-btn, .header__content-btn").on('click', function (e) {
     e.preventDefault() // отменяем стандартное действие перехода по ссылке
@@ -92,7 +109,8 @@ $(function () {
     $('body,html').animate({ scrollTop: top }, 800) // 800 — время прокрутки в мс
   });
 
-  $(".footer__column-list a").on('click', function (e) {
+  $(".footer__top-inner .footer__column:not(:nth-child(4)) a, .footer__go-top").on('click', function (e) {
+    
     e.preventDefault() // отменяем стандартное действие перехода по ссылке
       
     var elementClick = $(this).attr("href") // получаем значение атрибута href
@@ -101,7 +119,31 @@ $(function () {
     $('body,html').animate({ scrollTop: top }, 800) // 800 — время прокрутки в мс
   });
 
-  
 
+  // ================================= SCROLE AND CHOISE COURSE IN FOOTER =================================
+  // ================================= SCROLE AND CHOISE COURSE IN FOOTER =================================
+
+  
+  const footerLinks = document.querySelectorAll('.footer__column-list [data-filter]');
+  const filterButtons = document.querySelectorAll('.directions__filter-box button');
+  
+  footerLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Отключаем стандартный переход
+            
+            const filter = this.dataset.filter; // Получаем фильтр
+            
+            // Активируем соответствующий фильтр
+            filterButtons.forEach(btn => {
+                btn.classList.remove('directions__filter-btn--active');
+                if (btn.dataset.filter === filter) {
+                    btn.classList.add('directions__filter-btn--active');
+                }
+            });
+            
+            // Применяем фильтр через MixItUp
+            mixer.filter(filter);
+        });
+    });
 
 });
