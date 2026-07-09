@@ -128,22 +128,47 @@ $(function () {
   const filterButtons = document.querySelectorAll('.directions__filter-box button');
   
   footerLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault(); // Отключаем стандартный переход
-            
-            const filter = this.dataset.filter; // Получаем фильтр
-            
-            // Активируем соответствующий фильтр
-            filterButtons.forEach(btn => {
-                btn.classList.remove('directions__filter-btn--active');
-                if (btn.dataset.filter === filter) {
-                    btn.classList.add('directions__filter-btn--active');
-                }
-            });
-            
-            // Применяем фильтр через MixItUp
-            mixer.filter(filter);
-        });
+    link.addEventListener('click', function(e) {
+      e.preventDefault(); // Отключаем стандартный переход
+        
+      const filter = this.dataset.filter; // Получаем фильтр
+      
+      // Активируем соответствующий фильтр
+      filterButtons.forEach(btn => {
+          btn.classList.remove('directions__filter-btn--active');
+          if (btn.dataset.filter === filter) {
+              btn.classList.add('directions__filter-btn--active');
+          }
+      });
+      
+      // Применяем фильтр через MixItUp
+      mixer.filter(filter);
     });
+  });
+
+  // ================================= ADAPTIVE =================================
+  // ================================= ADAPTIVE =================================
+
+  $('.burger, .overlay').on('click', function (e) {
+    e.preventDefault()
+    $('.header__top').toggleClass('header__top--open')
+    $('.overlay').toggleClass('overlay--show')
+    $('.burger').toggleClass('burger--active')
+    if($(window).scrollTop() > 0 && $('.header__top').hasClass('header__top--open') === false) {
+      $('.burger').addClass('burger--follow')
+    } else {
+      $('.burger').removeClass('burger--follow')
+    }
+  })
+
+  $(window).on('scroll', function() {
+    if($(window).scrollTop() > 0 && $('.header__top').hasClass('header__top--open') === false) {
+      $('.burger').addClass('burger--follow')
+    }
+    else {
+      $('.burger').removeClass('burger--follow')
+    }
+  })
+
 
 });
