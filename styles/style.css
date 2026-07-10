@@ -369,15 +369,6 @@ html, body {
     padding-top: 180px;
 }
 
-/* ------FOR MOBILE ADAPTIVE START------ */
-
-.numbers-grid {
-    display: none;
-}
-
-/* ------FOR MOBILE ADAPTIVE END------ */
-
-
 .main__numbers-img img {
     width: 100%;
     height: 100%;
@@ -460,6 +451,10 @@ html, body {
 .directions__filter-box {
     display: flex;
     padding-bottom: 56px;
+}
+
+.directions__filter-item {
+    white-space: nowrap;
 }
 
 .directions__filter-btn {
@@ -1776,7 +1771,8 @@ html, body {
 
 @media (max-width: 1100px) {
     /* =============================================  HEADER MEDIA  ============================================= */
-    /* --------------------------HEADER TOP-------------------------- */
+    /* ********* H-E-A-D-E-R MEDIA  ********* */
+    /* ---------H-E-A-D-E-R TOP--------- */
     .burger {
         display: flex;
         flex-direction: column;
@@ -1887,7 +1883,7 @@ html, body {
         margin-left: 0;
     }
 
-    /* --------------------------HEADER BODY-------------------------- */
+    /* ---------H-E-A-D-E-R BODY--------- */
 
     .header__main {
         align-items: center;
@@ -1902,34 +1898,51 @@ html, body {
         width: 450px;
         height: 450px;
     }
-    /* =============================================  ABOUT US  MEDIA  ============================================= */
-
+    /* ********* A-B-O-U-T US  MEDIA  ********* */
     
-    /* .heading :nth-child(2):not(:is(button, a, svg)) {
-        font-size: 34px;
-    } */
-
     .about-info {
         padding-right: 8px;
     }
 
-    .about-info .about-heading h2 {
+    .heading :nth-child(2):not(:is(button, a, svg)) {
         font-size: 34px;
     }
+}
+
+/* =============================================  1000  ============================================= */
+
+
+@media (max-width: 1000px) {
+    /* ********* D-I-R-E-C-T-I-O-N-S  MEDIA  ********* */
 
     
+    /* ---------D-I-R-E-C-T-I-O-N-S BODY--------- */
+
+    .directions__filter-box {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 56px;
+    }
+
+    .directions__link-content {
+        padding: 24px 6px 5px;
+    }
+
 }
+
+
 
 /* =============================================  930  ============================================= */
 @media(max-width: 930px) {
 
-    /* --------------------------HEADER BODY-------------------------- */
+    /* ********* H-E-A-D-E-R MEDIA  ********* */
+
+    /* ---------H-E-A-D-E-R BODY--------- */
 
     .header__title {
         font-size: 48px;
         margin-bottom: 30px;
     }
-
 
     .header__content-buttons {
         display: inline-block;
@@ -1939,24 +1952,29 @@ html, body {
         width: 450px;
         height: 450px;
     }
-    /* --------------------------HEADER ROW-------------------------- */
+    /* ---------H-E-A-D-E-R ROW--------- */
+
     .header__row {
         display: none;
     }
 
-    /* ---------------------------------- ABOUT US  MEDIA  -------------------------------- */
-    /* ---------------------------------- ABOUT INNER ------------------------------------- */
+    /* ---------------------------------- ABOUT US MEDIA  -------------------------------- */
+    /* ********* A-B-O-U-T US MEDIA  ********* */
+
+    /* ---------A-B-O-U-T INNER--------- */
+
     .about-inner {
         justify-content: center;
     }
 
-    /* --------------------------ABOUT INFO-------------------------- */
+    /* ---------A-B-O-U-T INFO--------- */
+
     
     .about-heading {
         margin-bottom: 24px;
     }
     
-    .about-info .about-heading span{
+    .heading :nth-child(1):not(:is(button, a, svg)) {
         font-size: 14px;
     }
 
@@ -1970,14 +1988,15 @@ html, body {
         margin-bottom: 0;
     }
 
-    /* --------------------------ABOUT IMG-------------------------- */
+    /* ---------A-B-O-U-T IMG--------- */
 
     .about-inner img {
         max-width: 400px;
         max-height: 400px;
     }
 
-    /* ---------------------------------- NUMBERS  -------------------------------- */
+    /* ********* N-U-M-B-E-R-S MEDIA  ********* */
+
     .numbers-item :first-child {
         font-size: 40px;
         margin-right: 16px;
@@ -1988,12 +2007,24 @@ html, body {
         color: #1E212C;
     }
 
+    /* ********* D-I-R-E-C-T-I-O-N-S  MEDIA  ********* */
+    /* ---------D-I-R-E-C-T-I-O-N-S BODY--------- */
+    .directions__list {
+        grid-template: repeat(3, auto) / repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .directions__link-content {
+        padding: 24px 24px;
+    }
+
 }
 
 /* =============================================  860  ============================================= */
 
 @media (max-width: 860px) {
-    /* --------------------------HEADER BODY-------------------------- */
+    /* ********* H-E-A-D-E-R MEDIA  ********* */
+    /* ---------H-E-A-D-E-R BODY--------- */
     .header__main {
         justify-content: center;
         margin: 0;
@@ -2038,22 +2069,25 @@ html, body {
         display: none;
     }
 
-    /* ---------------------------------- ABOUT US  MEDIA  -------------------------------- */
+    /* ********* A-B-O-U-T US MEDIA  ********* */
+
     .main__about {
         margin-top: 0;
+        margin-bottom: 0;
     }
-    /* ---------------------------------- ABOUT INNER ------------------------------------- */
+    /* ---------A-B-O-U-T INNER--------- */
+
     .about-inner {
         justify-content: center;
     }
 
-    /* --------------------------ABOUT INFO-------------------------- */
-    
+    /* ---------A-B-O-U-T INFO--------- */
+
     .about-info {
         padding-right: 0;
     }
     
-    .about-heading {
+    .heading {
         text-align: center;
     }
 
@@ -2074,18 +2108,21 @@ html, body {
         margin: 0 auto;
     }
 
-
-    /* --------------------------ABOUT IMG-------------------------- */
+    /* ---------A-B-O-U-T IMG--------- */
 
     .about-inner img {
         display: none;
     }
 
-    /* ---------------------------------- NUMBERS  -------------------------------- */
+    /* ********* N-U-M-B-E-R-S MEDIA  ********* */
+    /* ---------A-B-O-U-T INNER--------- */
+
     .numbers-inner {
         padding-top: 70px;
         flex-direction: column;
     }
+
+    /* ---------A-B-O-U-T IMG--------- */
 
     .main__numbers-img {
         max-width: 560px;
@@ -2093,59 +2130,50 @@ html, body {
         margin: 0 auto;
     }
 
-    .numbers-list {
-        display: none;
-    }
+    /* ---------A-B-O-U-T LIST--------- */
 
-    .numbers-grid {
+    .numbers-list {
         display: grid;
-        grid-template-columns: auto 1fr; /* Две колонки */
+        grid-template-columns: auto 1fr;
         gap: 20px 30px;
-        align-items: center;
-        max-width: 600px;
+        padding-left: 0;
+        align-self: normal;
         margin: 0 auto;
     }
 
     /* Делаем обертку для каждой строки (чтобы не использовать display: contents) */
-    .numbers-row {
-        display: contents; /* Чтобы элементы были на уровне grid */
+    /* display: contents делает так, что элемент исчезает как контейнер, 
+    но его дети остаются и ведут себя так, как будто они находятся на 
+    месте родителя. */
+
+    .numbers-item {
+        display: contents;
     }
 
-    .numbers-row__number {
-        font-weight: 900;
+    .numbers-item :first-child {
         font-size: 36px;
-        line-height: 1.3;
-        letter-spacing: 0.02em;
-        color: var(--main-red);
-        text-align: right;
+        margin-right: 0;
         justify-self: center;
-        align-self: center;
     }
 
-    .numbers-row__text {
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 1.5;
-        color: #1E212C;
-        text-align: left;
+    .numbers-item :last-child {
         justify-self: center; 
         align-self: center;
-        padding-left: 10px;
     }
-   
 }
 
 /* =============================================  400  ============================================= */
 
 
 @media (max-width: 400px) {
-    /* --------------------------HEADER TOP-------------------------- */
+    /* ********* H-E-A-D-E-R MEDIA  ********* */
+    /* ---------H-E-A-D-E-R TOP--------- */
 
     .header__top {
         min-width: 0;
         left: 0;
     }
-    /* --------------------------HEADER BODY-------------------------- */
+    /* ---------H-E-A-D-E-R BODY--------- */
 
      .header__main {
         justify-content: center;
@@ -2173,11 +2201,11 @@ html, body {
         gap: 20px;
     }
 
-    /* ---------------------------------- ABOUT US  MEDIA  -------------------------------- */
-    
-    /* --------------------------ABOUT INFO-------------------------- */
+    /* ********* A-B-O-U-T US MEDIA  ********* */
 
-    .about-info .about-heading h2 {
+    /* ---------A-B-O-U-T INFO--------- */
+
+    .heading :nth-child(2):not(:is(button, a, svg)) {
         font-size: 32px;
     }
 
