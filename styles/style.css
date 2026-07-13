@@ -2020,6 +2020,8 @@ html, body {
 
 }
 
+
+
 /* =============================================  860  ============================================= */
 
 @media (max-width: 860px) {
@@ -2160,6 +2162,76 @@ html, body {
         justify-self: center; 
         align-self: center;
     }
+
+    /* ********* D-I-R-E-C-T-I-O-N-S  MEDIA  ********* */
+    /* ---------D-I-R-E-C-T-I-O-N-S BODY--------- */
+    .directions__filter-box {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-template-areas: 
+        "a b c d"
+        ". e f .";
+        justify-items: center;
+        gap: 8px 50px;
+    }
+
+    .directions__filter-box :nth-child(1) {
+        grid-area: a;
+    }
+    .directions__filter-box :nth-child(2) {
+        grid-area: b;
+    }
+    .directions__filter-box :nth-child(3) {
+        grid-area: c;
+    }
+    .directions__filter-box :nth-child(4) {
+        grid-area: d;
+    }
+
+    .directions__filter-box :nth-child(5) {
+        grid-area: e;
+    }
+
+    .directions__filter-box :nth-child(6) {
+        grid-area: f;
+    }
+
+    .directions__filter-box :not(:last-child) button {
+        margin-right: 0px;
+    }
+
+
+
+    .directions__list--media {
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+        justify-items: center;
+    }
+
+    .directions__list-item {
+        max-width: 400px;
+    }
+    
+
+
+
+}
+
+/* =============================================  700  ============================================= */
+
+
+@media (max-width: 700px) {
+    /* ********* D-I-R-E-C-T-I-O-N-S  MEDIA  ********* */
+    /* ---------D-I-R-E-C-T-I-O-N-S BODY--------- */
+    .directions__list {
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+        justify-items: center;
+    }
+    
+    /* .directions__list-item--empty {
+        display: none;
+    } */
 }
 
 /* =============================================  400  ============================================= */
