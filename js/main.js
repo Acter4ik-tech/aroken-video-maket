@@ -67,7 +67,30 @@ $(function () {
   $(".team__slider").slick({
     arrows: false,
     slidesToShow: 4,
-    draggable: false,
+    draggable: true,
+    responsive: 
+      [
+        {
+          breakpoint: 1100,
+          settings: {
+            slidesToShow: 3,
+          },
+        },
+        {
+          breakpoint: 860,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 570,
+          settings: {
+            slidesToShow: 1,
+            dots: true,
+            appendDots: $(".team__dots"),
+          },
+        },
+      ],
   });
 
   $(".team__slider-prev").on("click", function (e) {
@@ -173,6 +196,27 @@ $(function () {
 
   // ================================= ADAPTIVE =================================
   // ================================= ADAPTIVE =================================
+
+  function handleEmptyItem() {
+    const emptyItem = $(".directions__list-item--empty");
+
+    if ($(window).width() <= 700) {
+      emptyItem.removeClass("mix");
+      emptyItem.css("display", "none");
+    } else {
+      emptyItem.addClass("mix");
+      emptyItem.css("display", "");
+    }
+
+    // говорим MixItUp пересчитать элементы
+    mixer.forceRefresh();
+  }
+
+  // при загрузке
+  handleEmptyItem();
+
+  // при resize
+  $(window).on("resize", handleEmptyItem);
 
   $(".burger, .overlay").on("click", function (e) {
     e.preventDefault();
