@@ -68,29 +68,28 @@ $(function () {
     arrows: false,
     slidesToShow: 4,
     draggable: true,
-    responsive: 
-      [
-        {
-          breakpoint: 1100,
-          settings: {
-            slidesToShow: 3,
-          },
+    responsive: [
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 3,
         },
-        {
-          breakpoint: 860,
-          settings: {
-            slidesToShow: 2,
-          },
+      },
+      {
+        breakpoint: 860,
+        settings: {
+          slidesToShow: 2,
         },
-        {
-          breakpoint: 570,
-          settings: {
-            slidesToShow: 1,
-            dots: true,
-            appendDots: $(".team__dots"),
-          },
+      },
+      {
+        breakpoint: 570,
+        settings: {
+          slidesToShow: 1,
+          dots: true,
+          appendDots: $(".team__dots"),
         },
-      ],
+      },
+    ],
   });
 
   $(".team__slider-prev").on("click", function (e) {
@@ -112,6 +111,14 @@ $(function () {
     draggable: false,
     dots: true,
     appendDots: $(".testimonials__dots"),
+    responsive: [
+      {
+        breakpoint: 1000,
+        settings: {
+          draggable: true,
+        },
+      },
+    ],
   });
 
   $(".testimonials__slider-prev").on("click", function (e) {

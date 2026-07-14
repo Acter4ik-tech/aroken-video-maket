@@ -831,7 +831,7 @@ html, body {
 
 .testimonails__wrapper {
     display: flex;
-    max-height: 344px;
+    /* max-height: 344px; */
     margin-bottom: 46.5px;
 }
 
@@ -840,7 +840,6 @@ html, body {
     align-items: center;
 
 }
-
 
 .testimonials__slider-prev {
     padding-right: 87px;
@@ -876,10 +875,7 @@ html, body {
 
 .testimonials__slider {
     min-width: 0;
-    box-shadow: 0 4px 4px -4px rgba(30, 33, 44, 0.03),
-        0 12px 10px -6px rgba(154, 156, 165, 0.04),
-        0 30px 24px -10px rgba(154, 156, 165, 0.05),
-        0 80px 80px -20px rgba(154, 156, 165, 0.08);
+
 }
 
 .testimonials__slide {
@@ -887,7 +883,11 @@ html, body {
     font-weight: 400;
     line-height: 1.5;
     border-radius: 4px;
-
+    margin: 0 40px;
+    box-shadow: 0 4px 4px -4px rgba(30, 33, 44, 0.03),
+        0 12px 10px -6px rgba(154, 156, 165, 0.04),
+        0 30px 24px -10px rgba(154, 156, 165, 0.05),
+        0 80px 80px -20px rgba(154, 156, 165, 0.08);
 }
 
 .testimonials__slide-inner {
@@ -917,9 +917,12 @@ html, body {
     align-items: center;
 }
 
+.testimonials__img-box {
+    overflow: hidden;
+}
+
 .testimonials__img-box img {
     border-radius: 50%;
-    overflow: hidden;
 }
 
 .testimonial__person {
@@ -1033,7 +1036,8 @@ html, body {
 .companies__grid {
     display: grid;
     grid-template: repeat(2, auto) / repeat(6, 1fr);
-    gap: 40px 100px
+    /* gap: 40px 100px; */
+    gap: 6% 6%;
 }
 
 .companies__grid-link {
@@ -1914,6 +1918,17 @@ html, body {
     .heading :nth-child(2):not(:is(button, a, svg)) {
         font-size: 34px;
     }
+
+    /* ********* T-E-S-T-I-M-O-N-I-A-L-S  MEDIA  ********* */
+    /* ---------T-E-S-T-I-M-O-N-I-A-L-S SLIDE--------- */
+    .testimonials__slide-inner {
+        padding: 64px 50px 64px 119px;
+    }
+
+    .testimonials__slide-inner::before {
+        top: 63px;
+        left: 56px;
+    }
 }
 
 /* =============================================  1000  ============================================= */
@@ -1940,6 +1955,13 @@ html, body {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    /* ********* T-E-S-T-I-M-O-N-I-A-L-S  MEDIA  ********* */
+    /* ---------T-E-S-T-I-M-O-N-I-A-L-S ARROW--------- */
+
+    .testimonials__arrow {
+        display: none;
     }
 
 }
@@ -2031,6 +2053,25 @@ html, body {
 
     .directions__link-content {
         padding: 24px 24px;
+    }
+
+    /* ********* T-E-S-T-I-M-O-N-I-A-L-S  MEDIA  ********* */
+    /* ---------T-E-S-T-I-M-O-N-I-A-L-S SLIDE--------- */
+    .testimonials__slide-inner {
+        padding: 64px 61px 64px 100px;
+    }
+
+    .testimonials__slide-inner::before {
+        top: 66px;
+        left: 38px;
+    }
+
+    /* ********* C-O-M-P-A-N-I-E-S  MEDIA  ********* */
+    /* ---------C-O-M-P-A-N-I-E-S GRID--------- */
+
+    .companies__grid {
+        grid-template: repeat(3, auto) / repeat(4, 1fr);
+        gap: 10px 72px;
     }
 
 }
@@ -2265,12 +2306,56 @@ html, body {
     .main__team {
         padding: 160px 0 0;
     }
+
     /* ---------T-E-A-M  SLIDER--------- */
 
     .team__slider {
         max-width: 720px;
         margin: 0 auto;
     }
+
+    /* ********* T-E-S-T-I-M-O-N-I-A-L-S  MEDIA  ********* */
+    /* ---------T-E-S-T-I-M-O-N-I-A-L-S SLIDE--------- */
+
+    .testimonials__slide {
+        margin: 0 20px;
+    }
+
+    .testimonials__slide-inner::before {
+        width: 28px;
+        height: 16px;
+    }
+
+    .testimonials__quote {
+        font-size: 16px;
+    }
+
+    .testimonials__img-box {
+        max-width: 62px;
+        max-height: 62px;
+
+    }
+
+    .testimonials__img-box img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .testimonial__person {
+        padding-left: 14px;
+    }
+
+    .testimonial__person-name {
+        font-size: inherit;
+    }
+
+    .testimonial__person-position {
+        font-size: 12px;
+
+    }
+
+
+
 }
 
 /* =============================================  700  ============================================= */
@@ -2284,6 +2369,33 @@ html, body {
         grid-template-columns: 1fr;
         margin: 0 auto;
         justify-items: center;
+    }
+
+    /* ********* T-E-S-T-I-M-O-N-I-A-L-S  MEDIA  ********* */
+    /* ---------T-E-S-T-I-M-O-N-I-A-L-S SLIDE--------- */
+    .main__testimonals {
+        padding: 90px 0 90px 0;
+    }
+
+    .testimonails__wrapper {
+        padding: 0 5px;
+    }
+
+    .testimonials__slide-inner {
+        padding: 35px 27px 27px 69px;
+    }
+
+    .testimonials__slide-inner::before {
+        top: 38px;
+        left: 25px;
+    }
+
+    /* ********* C-O-M-P-A-N-I-E-S  MEDIA  ********* */
+    /* ---------C-O-M-P-A-N-I-E-S GRID--------- */
+
+    .companies__grid {
+        grid-template: repeat(4, auto) / repeat(3, 1fr);
+        gap: 8px 94px;
     }
 
 }
@@ -2339,7 +2451,36 @@ html, body {
         border-radius: 3px;
         transition: all .3s;
     }
-   
+
+    /* ********* T-E-S-T-I-M-O-N-I-A-L-S  MEDIA  ********* */
+    /* ---------T-E-S-T-I-M-O-N-I-A-L-S SLIDE--------- */
+
+    .testimonials__slide-inner {
+        padding: 35px 27px 27px 69px;
+    }
+
+    .testimonials__slide-inner::before {
+        top: 34px;
+        left: 23px;
+    }
+
+    .testimonials__quote {
+        font-size: 13px;
+        margin-bottom: 16px;
+        text-align: justify;
+    }
+
+    .testimonials__img-box {
+        max-width: 52px;
+        max-height: 52px;
+    }
+
+    /* ---------T-E-S-T-I-M-O-N-I-A-L-S DOTS--------- */
+
+    .testimonials__dots button {
+        width: 20px;
+    }
+
 }
 
 /* =============================================  500  ============================================= */
@@ -2385,6 +2526,60 @@ html, body {
 
     .directions__filter-btn {
         font-size: 14px;
+    }
+
+    /* ********* T-E-S-T-I-M-O-N-I-A-L-S  MEDIA  ********* */
+    /* ---------T-E-S-T-I-M-O-N-I-A-L-S SLIDE--------- */
+    .testimonails__wrapper {
+        margin-bottom: 28px;
+    }
+
+    .testimonials__slide {
+        margin: 0 10px;
+        border: 1px solid rgba(109, 105, 105, 0.486)
+    }
+
+    .testimonials__slide-inner {
+        padding: 34px 24px 24px 24px;
+    }
+
+    .testimonials__slide-inner::before {
+        top: 33px;
+        left: 17px;
+        width: 28px;
+        height: 16px;
+        opacity: 0.3;
+    }
+
+    .testimonials__img-box {
+        max-width: 42px;
+        max-height: 42px;
+    }
+
+    .testimonial__person {
+        padding-left: 10px;
+    }
+
+    .testimonial__person-name {
+        font-size: 13px;
+    }
+
+    /* ********* C-O-M-P-A-N-I-E-S  MEDIA  ********* */
+    /* ---------C-O-M-P-A-N-I-E-S GRID--------- */
+
+    .companies__grid {
+        grid-template: repeat(5, auto) / repeat(2, 1fr);
+        gap: 0px 0px;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .companies__grid-item {
+        max-width: 120px;
+        max-height: 54px;
+        align-self: center;
+        justify-self: center;
     }
 
 }
