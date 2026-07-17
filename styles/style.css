@@ -1143,6 +1143,15 @@ html, body {
     padding-top: 16px;
 }
 
+.cousre__img-box {
+    flex-shrink: 1;
+}
+
+.cousre__img {
+    width: 100%;
+    height: 100%;
+}
+
 /* =============================================  BLOG  ============================================= */
 /* =============================================  BLOG  ============================================= */
 
@@ -1165,9 +1174,8 @@ html, body {
 }
 
 .blog__post-item {
-    /* flex: 1 1 0; */
-    flex-grow: 1;
-    flex-basis: 0;
+    flex: 1 1 0;
+    min-width: 0;
     border-radius: 4px;
     transition: all .3s;
 }
@@ -1183,10 +1191,17 @@ html, body {
 
 .blog__post-link {
     display: block;
+    height: 100%;
 }
 
 .blog__post-link:hover .blog__content-btn {
     color: var(--main-red);
+}
+
+.blog__link-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .blog__img-box {
@@ -1241,6 +1256,9 @@ html, body {
 }
 
 .blog__link-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     margin-top: 16px;
     padding: 0 5px 5px;
 }
@@ -1261,6 +1279,7 @@ html, body {
 .blog__info-element {
     position: relative;
     padding: 0 12px;
+    white-space: nowrap;
 }
 
 .blog__info-element:first-child {
@@ -1315,6 +1334,11 @@ html, body {
 }
 
 .blog__content-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
     font-weight: 700;
     font-size: 20px;
     line-height: 1.5;
@@ -1323,6 +1347,11 @@ html, body {
 }
 
 .blog__content-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.6;
@@ -1331,8 +1360,10 @@ html, body {
 }
 
 .blog__content-btn {
-    display: inline-flex;
+    display: block;
+    max-width: fit-content;
     position: relative;
+    margin-top: auto;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.6;
@@ -1929,6 +1960,46 @@ html, body {
         top: 63px;
         left: 56px;
     }
+
+    /* ********* B-L-O-G  MEDIA  ********* */
+    /* ---------B-L-O-G CONTENT-INFO--------- */
+    .blog__content-info {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 6px 0;
+    }
+
+    .blog__post--article .blog__info-time {
+        display: flex;
+    }
+
+    .blog__info-dir {
+        order: 1;
+        flex-basis: 50%;
+    }
+
+    .blog__info-date {
+        order: 3;
+    }
+
+    .blog__info-time {
+        order: 2;
+    }
+
+    .blog__info-element {
+        padding: 0;
+    }
+
+    .blog__info-element:not(:nth-child(2)) {
+        margin-right: 5px;
+    }
+
+
+    .blog__info-element::after {
+        display: none;
+    }
+
+
 }
 
 /* =============================================  1000  ============================================= */
@@ -1944,9 +2015,9 @@ html, body {
         padding-bottom: 56px;
     }
 
-    .directions__link-content {
+    /* .directions__link-content {
         padding: 24px 6px 5px;
-    }
+    } */
 
     /* ********* A-W-A-R-D  MEDIA  ********* */
     /* ---------A-W-A-R-D IMG--------- */
@@ -1963,6 +2034,19 @@ html, body {
     .testimonials__arrow {
         display: none;
     }
+
+
+    /* ********* C-O-U-R-S-E MEDIA  ********* */
+    .cousre__inner {
+        justify-content: center;
+    }
+
+    /* ---------C-O-U-R-S-E IMG--------- */
+
+    .cousre__img-box {
+        display: none;
+    }
+
 
 }
 
@@ -2074,6 +2158,60 @@ html, body {
         gap: 10px 72px;
     }
 
+    /* ********* C-O-N-T-A-C-T  MEDIA  ********* */
+
+    .main__blog {
+        padding-bottom: 48px;
+    }
+
+    .contact__inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* ---------C-O-N-T-A-C-T INFO--------- */
+
+    .contact__info {
+        margin-right: 0;
+        display: grid;
+        grid-template: repeat(2, auto) / repeat(2, auto);
+        grid-template-areas:
+            "top top top top"
+            ". body-a body-b .";
+        align-items: center;
+        justify-items: center;
+    }
+
+    .contact__heading {
+        grid-area: top;
+    }
+
+    .contact__follow {
+        text-align: center;
+        align-self: self-start;
+        margin: 0 30px;
+    }
+
+    .contact__follow-title {
+        margin-bottom: 20px;
+    }
+
+    .contact__follow-list {
+        display: grid;
+        grid-template: repeat(2, auto) / repeat(3, auto);
+        gap: 30px 50px;
+    }
+
+    .contact__follow-item:not(:last-child) {
+        margin-right: 0px;
+    }
+
+    /* ---------C-O-N-T-A-C-T MAP--------- */
+
+    .contact__map {
+        height: 232px;
+        max-width: 626px;
+    }
 }
 
 
@@ -2354,6 +2492,28 @@ html, body {
 
     }
 
+    /* ********* B-L-O-G  MEDIA  ********* */
+    /* ---------B-L-O-G CONTENT-INFO--------- */
+    .blog__top {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 30px;
+
+    }
+
+    .blog__post-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog__post-item {
+        max-width: 400px;
+    }
+
+
+
+
 
 
 }
@@ -2481,6 +2641,38 @@ html, body {
         width: 20px;
     }
 
+    /* ********* C-O-N-T-A-C-T  MEDIA  ********* */
+
+    .contact__inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* ---------C-O-N-T-A-C-T INFO--------- */
+
+    .contact__info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact__data-list {
+        width: fit-content;
+    }
+
+    .contact__follow {
+        margin: 0 auto 14px;
+    }
+
+    .contact__follow-list {
+        display: flex;
+    }
+
+    /* ---------C-O-N-T-A-C-T MAP--------- */
+
+    .contact__map {
+        height: 160px;
+    }
+
 }
 
 /* =============================================  500  ============================================= */
@@ -2582,6 +2774,20 @@ html, body {
         justify-self: center;
     }
 
+    /* ********* C-O-N-T-A-C-T  MEDIA  ********* */
+
+    /* ---------C-O-N-T-A-C-T INFO--------- */
+
+    .contact__follow-list {
+        gap: 24px;
+    }
+
+    /* ---------C-O-N-T-A-C-T MAP--------- */
+
+    .contact__map {
+        height: 160px;
+    }
+
 }
 
 /* =============================================  400  ============================================= */
@@ -2639,6 +2845,17 @@ html, body {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
+    }
+
+    /* ********* C-O-U-R-S-E MEDIA  ********* */
+    /* ---------C-O-U-R-S-E CONTENT--------- */
+
+    .course__content {
+        font-size: 18px;
+    }
+
+    .cousre__lesson-desc {
+        font-size: 14px;
     }
 
 }
