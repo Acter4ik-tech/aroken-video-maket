@@ -1497,8 +1497,8 @@ html, body {
     overflow: hidden;
 }
 
-/* =============================================  CONTACT INFO  ============================================= */
-/* =============================================  CONTACT INFO  ============================================= */
+/* =============================================  QUESTION INFO  ============================================= */
+/* =============================================  QUESTION INFO  ============================================= */
 
 .main__questions {
     padding-top: 80px;
@@ -1509,6 +1509,12 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.questions__img img {
+    width: 100%;
+    height: 100%;
+    min-width: 350px;
 }
 
 .questions__content {
@@ -2157,12 +2163,14 @@ html, body {
         grid-template: repeat(3, auto) / repeat(4, 1fr);
         gap: 10px 72px;
     }
-
-    /* ********* C-O-N-T-A-C-T  MEDIA  ********* */
+    
+    /* ********* B-L-O-G MEDIA  ********* */
 
     .main__blog {
         padding-bottom: 48px;
     }
+
+    /* ********* C-O-N-T-A-C-T  MEDIA  ********* */
 
     .contact__inner {
         flex-direction: column;
@@ -2170,6 +2178,10 @@ html, body {
     }
 
     /* ---------C-O-N-T-A-C-T INFO--------- */
+    .main__contact {
+        padding-bottom: 40px;
+    }
+
 
     .contact__info {
         margin-right: 0;
@@ -2211,6 +2223,26 @@ html, body {
     .contact__map {
         height: 232px;
         max-width: 626px;
+    }
+
+    /* ********* Q-U-E-S-T-I-O-N-S MEDIA  ********* */
+
+    .questions__inner {
+        justify-content: center;
+    }
+
+
+    /* ---------Q-U-E-S-T-I-O-N-S CONTENT--------- */
+
+    .questions__heading {
+        text-align: center;
+    }
+
+
+    /* ---------Q-U-E-S-T-I-O-N-S IMG--------- */
+
+    .questions__img {
+        display: none;
     }
 }
 
@@ -2558,6 +2590,28 @@ html, body {
         gap: 8px 94px;
     }
 
+    /* ********* Q-U-E-S-T-I-O-N-S MEDIA  ********* */
+    .questions__content {
+        margin-left: 0;
+    }
+
+    /* ---------Q-U-E-S-T-I-O-N-S FORM--------- */
+    .questions__form-row {
+        flex-direction: column;
+    }
+
+    .questions__form-label:not(:last-child) {
+        margin-right: 0px;
+    }
+
+    .questions__checkbox-label {
+        margin-right: 0;
+    }
+
+    .questions__form-btn {
+        max-width: 300px;
+        margin-top: 10px;
+    }
 }
 
 /* =============================================  570  ============================================= */
@@ -2788,6 +2842,17 @@ html, body {
         height: 160px;
     }
 
+    /* ********* Q-U-E-S-T-I-O-N-S MEDIA  ********* */
+    /* ---------Q-U-E-S-T-I-O-N-S FORM--------- */
+
+    .questions__form-row:not(:last-child) {
+        margin-bottom: 2px;
+    }
+
+    .questions__form-label {
+        font-size: 14px;
+    }
+
 }
 
 /* =============================================  400  ============================================= */
@@ -2858,4 +2923,9 @@ html, body {
         font-size: 14px;
     }
 
+    /* ********* Q-U-E-S-T-I-O-N-S MEDIA  ********* */
+    /* ---------Q-U-E-S-T-I-O-N-S FORM--------- */
+    .questions__form-btn {
+        max-width: 204px;
+    }
 }
