@@ -349,5 +349,6 @@ $(function () {
   $(".footer__column-title--slide").on("click", function (e) {
     e.preventDefault();
     $(this).next().slideToggle();
+    $(this).children('.footer__column-arow').toggleClass('footer__column-arow--open');
   });
 });

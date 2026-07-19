@@ -2852,6 +2852,31 @@ html, body {
         cursor: pointer;
         pointer-events: auto;
     }
+
+    .footer__column-title {
+        display: flex;
+        max-width: fit-content;
+        position: relative;
+        align-items: center;
+    }
+
+    .footer__column-arow {
+        position: absolute;
+        display: block;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        border-top: 2px solid #ffffff;
+        border-right: 2px solid #ffffff;
+        transform: translateX(16px) rotate(45deg);
+        transition: all .3s;
+    }
+
+    .footer__column-arow--open {
+        transform: translateX(16px) rotate(135deg);
+    }
+
+
 }
 
 /* =============================================  500  ============================================= */
