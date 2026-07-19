@@ -150,26 +150,108 @@ $(function () {
   // ================================= SCROLE ANIMATIOM FOR LINK =================================
   // ================================= SCROLE ANIMATIOM FOR LINK =================================
 
-  $(
-    ".header__nav-list a, .header__top-btn, .header__content-btn, .header__content-btn",
-  ).on("click", function (e) {
-    e.preventDefault(); // отменяем стандартное действие перехода по ссылке
+  // $(
+  //   ".header__nav-list a, .header__top-btn, .header__content-btn, .header__content-btn",
+  // ).on("click", function (e) {
+  //   e.preventDefault(); // отменяем стандартное действие перехода по ссылке
 
-    var elementClick = $(this).attr("href"); // получаем значение атрибута href
-    var top = $(elementClick).offset().top; // определяем координаты элемента
+  //   var elementClick = $(this).attr("href"); // получаем значение атрибута href
+  //   var top = $(elementClick).offset().top; // определяем координаты элемента
 
-    $("body,html").animate({ scrollTop: top }, 800); // 800 — время прокрутки в мс
+  //   $("body,html").animate({ scrollTop: top }, 800); // 800 — время прокрутки в мс
+  // });
+
+  // $(
+  //   ".footer__top-inner .footer__column:not(:nth-child(4)) a, .footer__go-top",
+  // ).on("click", function (e) {
+  //   e.preventDefault(); // отменяем стандартное действие перехода по ссылке
+
+  //   var elementClick = $(this).attr("href"); // получаем значение атрибута href
+  //   var top = $(elementClick).offset().top; // определяем координаты элемента
+
+  //   $("body,html").animate({ scrollTop: top }, 800); // 800 — время прокрутки в мс
+  // });
+
+  function smoothScrollFor(selector) {
+    $(selector).on("click", function (e) {
+      e.preventDefault();
+      var top = $($(this).attr("href")).offset().top;
+      $("body,html").animate({ scrollTop: top }, 800);
+    });
+  }
+
+  smoothScrollFor(
+    ".header__nav-list a, .header__top-btn, .header__content-btn",
+  );
+  smoothScrollFor(
+    ".footer__top-inner .footer__column:not(:nth-child(4)) a, .footer__go-top",
+  );
+  // ================================= INVALID FORM =================================
+  // ================================= INVALID FORM =================================
+  // -------- CHECK WHEN FORM SUBMIT --------
+
+  $(".questions__form").on("submit", function (e) {
+    e.preventDefault();
+    var $inputs = $(this).find(
+      ".questions__form-input, .questions__form-text, .questions__checkbox-default",
+    );
+    var isValid = true;
+
+    $inputs.each(function () {
+      var $input = $(this);
+      var $error = $input.closest("label").find(".questions__form-error");
+
+      if (!this.checkValidity()) {
+        $input.addClass("questions__form-input--invalid");
+
+        if ($input.is(".questions__checkbox-default")) {
+          $input
+            .closest(".questions__form-checkbox")
+            .addClass("questions__form-checkbox--invalid");
+          $input
+            .next(".questions__checkbox-custom")
+            .addClass("questions__checkbox-custom--invalid");
+        }
+
+        $error.text(this.validationMessage);
+        isValid = false;
+      }
+    });
+
+    if (isValid) {
+      console.log("форма валидна, отправляем");
+    }
   });
 
-  $(
-    ".footer__top-inner .footer__column:not(:nth-child(4)) a, .footer__go-top",
-  ).on("click", function (e) {
-    e.preventDefault(); // отменяем стандартное действие перехода по ссылке
+  // -------- CHECK WHEN INPUT CHANGE --------
+  // -------- CHECK INPUT --------
 
-    var elementClick = $(this).attr("href"); // получаем значение атрибута href
-    var top = $(elementClick).offset().top; // определяем координаты элемента
+  $(".questions__form-input, .questions__form-text").on("input", function () {
+    var $input = $(this);
+    var $error = $input.closest("label").find(".questions__form-error");
 
-    $("body,html").animate({ scrollTop: top }, 800); // 800 — время прокрутки в мс
+    if (this.checkValidity()) {
+      $input.removeClass("questions__form-input--invalid");
+      $error.text("");
+    }
+  });
+
+  // -------- CHECK CHECKBOX --------
+
+  $(".questions__checkbox-default").on("change", function () {
+    var $input = $(this);
+    var $error = $input.closest("label").find(".questions__form-error");
+
+    if (this.checkValidity()) {
+      $input.removeClass("questions__form-input--invalid");
+      $input
+        .closest(".questions__form-checkbox")
+        .removeClass("questions__form-checkbox--invalid");
+      $input
+        .next(".questions__checkbox-custom")
+        .removeClass("questions__checkbox-custom--invalid");
+      $error.text("");
+    }
   });
 
   // ================================= SCROLE AND CHOISE COURSE IN FOOTER =================================
@@ -204,6 +286,8 @@ $(function () {
   // ================================= ADAPTIVE =================================
   // ================================= ADAPTIVE =================================
 
+  // -------- DELETE EMPTY ELEMENT IN DIRECTION LIST --------
+
   function handleEmptyItem() {
     const emptyItem = $(".directions__list-item--empty");
 
@@ -225,20 +309,29 @@ $(function () {
   // при resize
   $(window).on("resize", handleEmptyItem);
 
-  $(".burger, .overlay").on("click", function (e) {
-    e.preventDefault();
-    $(".header__top").toggleClass("header__top--open");
-    $(".overlay").toggleClass("overlay--show");
-    $(".burger").toggleClass("burger--active");
-    if (
-      $(window).scrollTop() > 0 &&
-      $(".header__top").hasClass("header__top--open") === false
-    ) {
-      $(".burger").addClass("burger--follow");
-    } else {
-      $(".burger").removeClass("burger--follow");
-    }
-  });
+  // ------------------- BURGER MENU -------------------
+
+  $(".burger, .overlay, .header__nav-list a, .header__btn-box a").on(
+    "click",
+    function (e) {
+      e.preventDefault();
+      $(".header__top").toggleClass("header__top--open");
+      if($(window).width() <= 1100) { // <-
+        $(".overlay").toggleClass("overlay--show");
+      }
+      $(".burger").toggleClass("burger--active");
+      if (
+        $(window).scrollTop() > 0 &&
+        $(".header__top").hasClass("header__top--open") === false
+      ) {
+        $(".burger").addClass("burger--follow");
+      } else {
+        $(".burger").removeClass("burger--follow");
+      }
+    },
+  );
+
+  // ------------------- BURGER MENU WHEN WINDOW SCROLL -------------------
 
   $(window).on("scroll", function () {
     if (
@@ -249,5 +342,12 @@ $(function () {
     } else {
       $(".burger").removeClass("burger--follow");
     }
+  });
+
+  // ------------------- FOOTER OPEN/CLOSE ELEMENTS -------------------
+
+  $(".footer__column-title--slide").on("click", function (e) {
+    e.preventDefault();
+    $(this).next().slideToggle();
   });
 });

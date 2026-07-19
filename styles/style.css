@@ -1624,6 +1624,54 @@ html, body {
     text-align: center;
 }
 
+/* ----- FORM VALID/INVALID -----*/
+
+.questions__form input:focus,
+.questions__form textarea:focus {
+   transition: all .3s;
+}
+
+.questions__form input:focus,
+.questions__form textarea:focus {
+    border-color: #f5781e;
+    background-color: #FFFDFB;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2); 
+}
+
+.questions__form .questions__form-input--invalid {
+    border-color: #fd342a;
+    background-color: rgba(244, 67, 54, 0.05);
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.02);
+}
+
+.questions__form-label,
+.questions__text-label {
+    position: relative; /* если ещё не задано */
+}
+
+.questions__form-error {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    color: #FF3B30;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.questions__form-checkbox--invalid {
+    border: 2px solid #FF3B30;
+    border-radius: 3px;
+}
+
+.questions__checkbox-custom--invalid {
+    border: 0px;
+}
+.questions__checkbox-label {
+    position: relative;
+}
+
+/* --------------- */
+
 /* =============================================  FOOTER  ============================================= */
 /* =============================================  FOOTER  ============================================= */
 
@@ -1697,6 +1745,7 @@ html, body {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 12px;
+    pointer-events: none;
 }
 
 .footer__column-title {
@@ -2010,7 +2059,6 @@ html, body {
 
 /* =============================================  1000  ============================================= */
 
-
 @media (max-width: 1000px) {
     /* ********* D-I-R-E-C-T-I-O-N-S  MEDIA  ********* */
     /* ---------D-I-R-E-C-T-I-O-N-S BODY--------- */
@@ -2056,13 +2104,10 @@ html, body {
 
 }
 
-
-
 /* =============================================  930  ============================================= */
 @media(max-width: 930px) {
 
     /* ********* H-E-A-D-E-R MEDIA  ********* */
-
     /* ---------H-E-A-D-E-R BODY--------- */
 
     .header__title {
@@ -2087,7 +2132,6 @@ html, body {
 
     /* ---------------------------------- ABOUT US MEDIA  -------------------------------- */
     /* ********* A-B-O-U-T US MEDIA  ********* */
-
     /* ---------A-B-O-U-T INNER--------- */
 
     .about-inner {
@@ -2095,7 +2139,6 @@ html, body {
     }
 
     /* ---------A-B-O-U-T INFO--------- */
-
 
     .about-heading {
         margin-bottom: 24px;
@@ -2163,7 +2206,7 @@ html, body {
         grid-template: repeat(3, auto) / repeat(4, 1fr);
         gap: 10px 72px;
     }
-    
+
     /* ********* B-L-O-G MEDIA  ********* */
 
     .main__blog {
@@ -2244,9 +2287,29 @@ html, body {
     .questions__img {
         display: none;
     }
+
+    /* ********* F-O-O-T-E-R MEDIA  ********* */
+    .footer__top-inner {
+        flex-wrap: wrap;
+    }
+
+    /* ---------F-O-O-T-E-R COLUMN--------- */
+
+
+    .footer__column {
+        padding-top: 20px;
+    }
+
+    .footer__column:not(:first-child) {
+        padding-left: 15px;
+    }
+
+
+    .footer__column:last-child {
+        padding-left: 0px;
+    }
+
 }
-
-
 
 /* =============================================  860  ============================================= */
 
@@ -2303,6 +2366,7 @@ html, body {
     .main__about {
         margin-top: 0;
         margin-bottom: 0;
+        padding-top: 50px;
     }
 
     /* ---------A-B-O-U-T INNER--------- */
@@ -2369,6 +2433,7 @@ html, body {
         padding-left: 0;
         align-self: normal;
         margin: 0 auto;
+        padding-top: 20px;
     }
 
     /* Делаем обертку для каждой строки (чтобы не использовать display: contents) */
@@ -2474,7 +2539,7 @@ html, body {
 
     /* ********* T-E-A-M  MEDIA  ********* */
     .main__team {
-        padding: 160px 0 0;
+        padding: 120px 0 0;
     }
 
     /* ---------T-E-A-M  SLIDER--------- */
@@ -2524,7 +2589,26 @@ html, body {
 
     }
 
+    /* ********* C-O-M-P-A-N-I-E-S  MEDIA  ********* */
+    /* ---------C-O-M-P-A-N-I-E-S MAIN--------- */
+    .main__companies {
+        padding: 0 0 88px 0;
+        background: var(--gray200);
+    }
+
+    /* ********* C-O-U-R-S-E  MEDIA  ********* */
+    /* ---------C-O-U-R-S-E MAIN--------- */
+
+    .main__course {
+        margin-top: 78px;
+        margin-bottom: 52px;
+    }
+
     /* ********* B-L-O-G  MEDIA  ********* */
+    .main__blog {
+        padding-top: 40px;
+    }
+
     /* ---------B-L-O-G CONTENT-INFO--------- */
     .blog__top {
         flex-direction: column;
@@ -2543,15 +2627,21 @@ html, body {
         max-width: 400px;
     }
 
+    /* ********* C-O-N-T-A-C-T  MEDIA  ********* */
+    /* ---------C-O-N-T-A-C-T MAIN--------- */
+    .main__contact {
+        padding-top: 38px;
+    }
 
-
-
-
-
+    /* ********* Q-U-E-S-T-I-O-N  MEDIA  ********* */
+    /* ---------Q-U-E-S-T-I-O-N MAIN--------- */
+    .main__questions {
+        padding-top: 52px;
+        padding-bottom: 88px;
+    }
 }
 
 /* =============================================  700  ============================================= */
-
 
 @media (max-width: 700px) {
 
@@ -2600,6 +2690,10 @@ html, body {
         flex-direction: column;
     }
 
+    .questions__form-label {
+        margin-top: 20px;
+    }
+
     .questions__form-label:not(:last-child) {
         margin-right: 0px;
     }
@@ -2608,9 +2702,13 @@ html, body {
         margin-right: 0;
     }
 
+    .questions__checkbox-label .questions__form-error {
+        background-color: #ffffffbe;
+    }
+
     .questions__form-btn {
         max-width: 300px;
-        margin-top: 10px;
+        margin-top: 50px;
     }
 }
 
@@ -2727,10 +2825,36 @@ html, body {
         height: 160px;
     }
 
+    /* ********* F-O-O-T-E-R MEDIA  ********* */
+    .footer__top-inner {
+        display: grid;
+        justify-content: center;
+        padding-top: 48px;
+        padding-bottom: 38px;
+    }
+
+    /* ---------F-O-O-T-E-R COLUMN--------- */
+
+    .footer__column:not(:first-child) {
+        padding-top: 15px;
+        padding-left: 0px;
+    }
+
+    .footer__follow-list {
+        margin-top: 22px;
+    }
+
+    .footer__column-list {
+        display: none;
+    }
+
+    .footer__column-title--slide {
+        cursor: pointer;
+        pointer-events: auto;
+    }
 }
 
 /* =============================================  500  ============================================= */
-
 
 @media (max-width: 500px) {
 
@@ -2856,7 +2980,6 @@ html, body {
 }
 
 /* =============================================  400  ============================================= */
-
 
 @media (max-width: 400px) {
     /* ********* H-E-A-D-E-R MEDIA  ********* */

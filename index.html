@@ -1069,30 +1069,35 @@
                                 <span>Any questions?</span>
                                 <h2>Drop us a line</h2>
                             </div>
-                            <form class="questions__form">
+                            <form class="questions__form" novalidate>
                                 <div class="questions__form-row">
                                     <label class="questions__form-label">
                                         First Name*
                                         <input type="text" class="questions__form-input" placeholder="Your first name" required>
+                                        <span class="questions__form-error"></span>
                                     </label>
                                     <label class="questions__form-label">
                                         Last  Name*
                                         <input type="text" class="questions__form-input" placeholder="Your last name" required>
+                                        <span class="questions__form-error"></span>
                                     </label>
                                 </div>
                                 <div class="questions__form-row">
                                     <label class="questions__form-label">
                                         Email*
                                         <input type="email" class="questions__form-input" placeholder="Your working email" required>
+                                        <span class="questions__form-error"></span>
                                     </label>
                                     <label class="questions__form-label">
                                         Phone
                                         <input type="tel" class="questions__form-input" placeholder="Your phone number">
+                                        <span class="questions__form-error"></span>
                                     </label>
                                 </div>
                                 <label class="questions__text-label">
                                     Message*
                                     <textarea class="questions__form-text" placeholder="Your message" required></textarea>
+                                    <span class="questions__form-error"></span>
                                 </label>
                                 <div class="questions__form-row">
                                     <label class="questions__checkbox-label">
@@ -1101,6 +1106,7 @@
                                             <span class="questions__checkbox-custom"></span>
                                         </div>
                                         I agree to receive communications from Createx Online School
+                                        <span class="questions__form-error"></span>
                                     </label>
                                     <button type="submit" class="questions__form-btn button">Send message</button>
                                 </div>
@@ -1171,7 +1177,7 @@
                             </ul>
                         </div>
                         <div class="footer__column">
-                            <div class="footer__column-title">SITE MAP</div>
+                            <div class="footer__column-title footer__column-title--slide">SITE MAP</div>
                             <ul class="footer__column-list">
                                 <li class="footer__column-item">
                                     <a href="#about" class="footer__column-link">About Us</a>
@@ -1191,7 +1197,7 @@
                             </ul>
                         </div>
                         <div class="footer__column">
-                            <div class="footer__column-title">COURSES</div>
+                            <div class="footer__column-title footer__column-title--slide">COURSES</div>
                             <ul class="footer__column-list ">
                                 <li class="footer__column-item">
                                     <a href="#directions" class="footer__column-link" data-filter=".directions__list-item--marketing">Marketing</a>
@@ -1211,7 +1217,7 @@
                             </ul>
                         </div>
                         <div class="footer__column">
-                            <div class="footer__column-title">COURSES</div>
+                            <div class="footer__column-title footer__column-title--slide">CONTACT US</div>
                             <ul class="footer__column-list">
                                 <li class="footer__column-item">
                                     <a class="footer__column-link" href="tel:4055550128">
